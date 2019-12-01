@@ -7,10 +7,14 @@ BASE_HOA = {
 
 def add_character(show, name)
   
-  BASE_HOA[show] << name
+  if BASE_HOA[show]
+    BASE_HOA[show] << name
+  else
+    BASE_HOA => show
+    BASE_HOA[show] << name
+  end
   
-  show
-  
+  BASE_HOA[show]
   # Write your implementation here
   # Should return the array of the 'show' argument
 end
